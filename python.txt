@@ -1,0 +1,18 @@
+import time
+
+start_time = time.time()
+
+file =open('pg100.txt','r+')
+
+wordCout={}
+for word in file.read().split():
+  if word not in wordCout:
+      wordCout[word]=1
+  else:
+      wordCout[word]+=1
+for key in wordCout.keys():
+  print(key,' ',wordCout[key])
+
+file.close()
+
+print("--- %  seconds ---" %(time.time()-start_time))
